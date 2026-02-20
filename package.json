@@ -1,0 +1,35 @@
+{
+  "name": "ebutia",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A browser extension that summarizes YouTube videos using AI",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "webextension-polyfill": "^0.12.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.228",
+    "@types/node": "^18.15.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^4.9.5",
+    "vite": "^6.2.2"
+  },
+  "scripts": {
+    "predev": "node scripts/update-version.js",
+    "dev": "vite build --watch --mode development",
+    "predev:firefox": "node scripts/update-version.js",
+    "dev:firefox": "vite build --watch --mode firefox",
+    "prebuild": "node scripts/update-version.js",
+    "build": "tsc && vite build --mode production && node scripts/build-content.js --browser=chrome",
+    "prebuild:firefox": "node scripts/update-version.js",
+    "build:firefox": "tsc && vite build --mode firefox && node scripts/build-content.js --browser=firefox",
+    "preview": "vite preview",
+    "clean": "rm -rf dist_chrome dist_firefox",
+    "update-version": "node scripts/update-version.js"
+  }
+}

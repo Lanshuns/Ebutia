@@ -1,0 +1,145 @@
+.button-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.mode-button {
+    flex: 1;
+    min-width: 80px;
+    padding: 10px 12px;
+    border: 1px solid #e5e7eb;
+    background: transparent;
+    color: #6b7280;
+    border-radius: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.mode-button.dark {
+    border-color: #374151;
+    color: #9ca3af;
+}
+
+.mode-button:hover {
+    border-color: #d1d5db;
+    background: #f9fafb;
+}
+
+.mode-button.dark:hover {
+    border-color: #4b5563;
+    background: #1f2937;
+}
+
+.mode-button.active {
+    border-color: #2563eb;
+    background: #eff6ff;
+    color: #1f2937;
+}
+
+.mode-button.active.dark {
+    background: rgba(59, 130, 246, 0.1);
+    color: #f9fafb;
+}
+
+.reset-button {
+    background: transparent;
+    border: none;
+    color: #6b7280;
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+}
+
+.reset-button.dark {
+    color: #9ca3af;
+}
+
+.reset-button:hover {
+    color: #374151;
+}
+
+.reset-button.dark:hover {
+    color: #d1d5db;
+}
+
+.action-button {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    font-size: 12px;
+    cursor: pointer;
+    background: #ffffff;
+    color: #374151;
+    transition: all 0.2s;
+}
+
+.action-button.dark {
+    background: #1f2937;
+    border-color: #374151;
+    color: #d1d5db;
+}
+
+.action-button.primary {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+}
+
+.action-button.danger {
+    background: #ef4444;
+    border-color: #ef4444;
+    color: #ffffff;
+}
+
+.action-button:hover {
+    background: #f9fafb;
+}
+
+.action-button.primary:hover,
+.action-button.danger:hover {
+    opacity: 0.92;
+}
+
+.action-button.dark:hover {
+    background: #374151;
+}
+
+.icon-btn-small {
+    background: transparent;
+    border: none;
+    padding: 6px;
+    cursor: pointer;
+    color: #6b7280;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn-small:hover {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.icon-btn-small.dark {
+    color: #9ca3af;
+}
+
+.icon-btn-small.dark:hover {
+    background: #374151;
+    color: #f9fafb;
+}
+
+.icon-btn-small.danger:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.icon-btn-small.dark.danger:hover {
+    background: rgba(220, 38, 38, 0.2);
+    color: #f87171;
+}

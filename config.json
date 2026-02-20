@@ -1,0 +1,112 @@
+{
+    "openModes": {
+        "tab": {
+            "label": "New tab",
+            "description": "Opens the chat in a new tab."
+        },
+        "popup": {
+            "label": "New window",
+            "description": "Opens the chat in a new window."
+        }
+    },
+    "chatbots": {
+        "perplexity": {
+            "name": "Perplexity",
+            "capabilities": {
+                "urlSummary": true,
+                "query": true,
+                "bestMode": [
+                    "New tab",
+                    "New window"
+                ]
+            },
+            "baseUrl": "https://www.perplexity.ai/search",
+            "urlPatterns": [
+                "perplexity.ai"
+            ],
+            "input": [
+                "div[contenteditable=\"true\"]"
+            ],
+            "sendButton": [
+                "button[aria-label*=\"Submit\"]"
+            ]
+        },
+        "copilot": {
+            "name": "Copilot",
+            "capabilities": {
+                "urlSummary": true,
+                "query": false,
+                "bestMode": [
+                    "New tab",
+                    "New window"
+                ]
+            },
+            "baseUrl": "https://copilot.microsoft.com/",
+            "urlPatterns": [
+                "copilot.microsoft.com"
+            ],
+            "shadowHost": [
+                "cib-serp"
+            ],
+            "input": [
+                "#userInput"
+            ],
+            "sendButton": [
+                "button[aria-label*=\"submit\" i]"
+            ]
+        },
+        "lumo": {
+            "name": "Lumo",
+            "capabilities": {
+                "urlSummary": true,
+                "query": true,
+                "bestMode": [
+                    "New tab",
+                    "New window"
+                ]
+            },
+            "baseUrl": "https://lumo.proton.me/",
+            "urlPatterns": [
+                "lumo.proton.me",
+                "proton.me"
+            ],
+            "input": [
+                ".tiptap.ProseMirror"
+            ],
+            "sendButton": [
+                "img[alt=\"Start generating\"]"
+            ],
+            "webSearchButton": [
+                "button.web-search-button"
+            ]
+        }
+    },
+    "youtube": {
+        "hover": {
+            "videoSelectors": "ytd-rich-item-renderer, ytd-video-renderer, ytd-grid-video-renderer, ytd-compact-video-renderer, ytd-playlist-video-renderer, ytd-reel-item-renderer, ytd-playlist-panel-video-renderer, yt-lockup-view-model",
+            "thumbnailSelectors": "ytd-thumbnail, #thumbnail, a#thumbnail, yt-thumbnail-view-model, .yt-lockup-view-model__content-image",
+            "thumbnailLinkSelectors": "a#thumbnail, a.yt-lockup-view-model__content-image",
+            "overlaySelectors": ".html5-video-player, #movie_player, .ytp-preview, .ytd-moving-thumbnail-renderer",
+            "endpointSelector": "a#wc-endpoint"
+        },
+        "player": {
+            "rightControls": ".ytp-right-controls",
+            "metadataMenu": "ytd-menu-renderer.ytd-watch-metadata",
+            "topLevelButtons": "#top-level-buttons-computed",
+            "ebutiaControls": ".ebutia-controls"
+        },
+        "transcript": {
+            "title": "h1.ytd-watch-metadata yt-formatted-string",
+            "openButton": "ytd-video-description-transcript-section-renderer button[aria-label*=\"transcript\" i]",
+            "panel": "ytd-engagement-panel-section-list-renderer[target-id=\"engagement-panel-searchable-transcript\"]",
+            "chapters": "ytd-transcript-section-header-renderer .yt-shelf-header-layout__title",
+            "segments": "ytd-transcript-segment-renderer",
+            "segmentTimestamp": ".segment-timestamp",
+            "segmentText": ".segment-text",
+            "closeButton": "ytd-engagement-panel-section-list-renderer[visibility=\"ENGAGEMENT_PANEL_VISIBILITY_EXPANDED\"] #visibility-button button"
+        },
+        "subtitles": {
+            "button": ".ytp-subtitles-button"
+        }
+    }
+}

@@ -1,0 +1,143 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content.dark {
+    background: #1f2937;
+    border: 1px solid #374151;
+}
+
+.modal-title {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.modal-title.dark {
+    color: #f9fafb;
+}
+
+.modal-text {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+.modal-text.dark {
+    color: #9ca3af;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.modal-content.picker-modal {
+    width: 90%;
+    max-width: 340px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.modal-header .modal-title {
+    margin-bottom: 0;
+}
+
+.modal-body {
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-right: 4px;
+}
+
+.modal-footer {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+.chatbot-dropdown-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.chatbot-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    margin-top: 4px;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.chatbot-dropdown-menu.dark {
+    background: #1f2937;
+    border: 1px solid #374151;
+}
+
+.chatbot-dropdown-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    cursor: pointer;
+    color: #374151;
+    transition: background-color 0.15s;
+}
+
+.chatbot-dropdown-menu.dark .chatbot-dropdown-option {
+    color: #f9fafb;
+}
+
+.chatbot-dropdown-option:hover {
+    background-color: #f9fafb;
+}
+
+.chatbot-dropdown-menu.dark .chatbot-dropdown-option:hover {
+    background-color: #374151;
+}
+
+.chatbot-dropdown-option.selected {
+    background-color: #eff6ff;
+}
+
+.chatbot-dropdown-menu.dark .chatbot-dropdown-option.selected {
+    background-color: rgba(59, 130, 246, 0.1);
+}

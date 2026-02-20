@@ -1,0 +1,45 @@
+.refresh-banner {
+  margin: 16px 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+  color: #374151;
+  font-size: 13px;
+}
+
+.refresh-banner.dark {
+  border-color: #374151;
+  background: #1f2937;
+  color: #d1d5db;
+}
+
+.refresh-banner button {
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: #eff6ff;
+  color: #1f2937;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.refresh-banner button:hover {
+  background: #dbeafe;
+}
+
+.refresh-banner.dark button {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  color: #f9fafb;
+}
+
+.refresh-banner.dark button:hover {
+  background: rgba(59, 130, 246, 0.16);
+}

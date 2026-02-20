@@ -1,0 +1,90 @@
+.changelog-container {
+    padding: 16px 20px;
+}
+
+.changelog-content {
+    color: #374151;
+    font-size: 13px;
+    line-height: 1.6;
+    max-height: 380px;
+    overflow-y: auto;
+}
+
+.changelog-content.dark {
+    color: #d1d5db;
+}
+
+.changelog-content h1 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #111827;
+    font-weight: 600;
+}
+
+.changelog-content.dark h1 {
+    color: #f3f4f6;
+}
+
+.changelog-content h2 {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #3b82f6;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 6px;
+}
+
+.changelog-content.dark h2 {
+    border-bottom-color: #374151;
+}
+
+.changelog-content h2:first-child {
+    margin-top: 0;
+}
+
+.changelog-content h3 {
+    font-size: 14px;
+    margin-top: 14px;
+    margin-bottom: 8px;
+    color: #6b7280;
+}
+
+.changelog-content.dark h3 {
+    color: #9ca3af;
+}
+
+.changelog-content ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.changelog-content li {
+    margin-bottom: 6px;
+    position: relative;
+    list-style-type: none;
+}
+
+.changelog-content li::before {
+    content: "•";
+    color: #3b82f6;
+    position: absolute;
+    left: -14px;
+    font-weight: bold;
+}
+
+.changelog-message {
+    text-align: center;
+    padding: 20px;
+    color: #6b7280;
+}
+
+.changelog-message.dark {
+    color: #9ca3af;
+}
+
+.changelog-error {
+    text-align: center;
+    padding: 20px;
+    color: #ef4444;
+}

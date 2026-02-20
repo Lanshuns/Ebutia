@@ -1,0 +1,85 @@
+{
+  "manifest_version": 3,
+  "name": "Ebutia",
+  "version": "1.0.0",
+  "description": "Summarize YouTube videos made easy, using your favorite AI chatbots",
+  "icons": {
+    "16": "public/icons/ebutia-16.png",
+    "48": "public/icons/ebutia-48.png",
+    "128": "public/icons/ebutia-128.png"
+  },
+  "action": {
+    "default_popup": "src/pages/popup/index.html",
+    "default_icon": {
+      "16": "public/icons/ebutia-16.png",
+      "48": "public/icons/ebutia-48.png",
+      "128": "public/icons/ebutia-128.png"
+    }
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "contextMenus",
+    "declarativeNetRequest"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://www.perplexity.ai/*",
+    "https://copilot.microsoft.com/*",
+    "https://lumo.proton.me/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "contentScript.js"
+      ],
+      "css": [
+        "assets/content.css"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://www.perplexity.ai/*",
+        "https://copilot.microsoft.com/*",
+        "https://lumo.proton.me/*"
+      ],
+      "js": [
+        "chatbotScript.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "public/icons/ebutia.png",
+        "CHANGELOG.md"
+      ],
+      "matches": [
+        "https://www.youtube.com/*"
+      ]
+    }
+  ]
+}

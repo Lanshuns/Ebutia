@@ -1,0 +1,592 @@
+.ebutia-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.ebutia-button:hover {
+  background: rgba(0, 0, 0, 0.95);
+  transform: scale(1.02);
+}
+
+.ebutia-button:active {
+  transform: scale(0.98);
+}
+
+.ebutia-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.ebutia-tooltip.visible {
+  opacity: 1;
+}
+
+.ebutia-refresh-toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: ebutia-slide-down 0.3s ease-out;
+}
+
+.ebutia-refresh-toast-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ebutia-refresh-toast-message {
+  line-height: 1.4;
+}
+
+.ebutia-refresh-button {
+  padding: 6px 16px;
+  border: 1px solid rgba(59, 130, 246, 0.5);
+  border-radius: 6px;
+  background: rgba(37, 99, 235, 0.9);
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.ebutia-refresh-button:hover {
+  background: rgba(29, 78, 216, 1);
+  border-color: rgba(59, 130, 246, 0.8);
+}
+
+@keyframes ebutia-slide-down {
+  from {
+    transform: translate(-50%, -20px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes ebutia-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ebutia-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ebutia-svg-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ebutia-svg-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.ebutia-floating-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.1s ease;
+  pointer-events: auto;
+}
+
+.ebutia-floating-action-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.03);
+}
+
+.ebutia-floating-action-btn:active {
+  transform: scale(0.97);
+}
+
+.ebutia-floating-action-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ebutia-floating-action-label {
+  line-height: 1;
+  user-select: none;
+}
+
+html[dark] .ebutia-button,
+html[dark] .ebutia-floating-action-btn {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+html[dark] .ebutia-button:hover,
+html[dark] .ebutia-floating-action-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.ebutia-controls {
+  display: flex;
+  align-items: center;
+}
+
+.ebutia-controls.player-mode {
+  float: right;
+  margin-right: 10px;
+}
+
+.ebutia-controls.metadata-mode {
+  margin-right: 8px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 18px;
+  height: 36px;
+}
+
+html[dark] .ebutia-controls.metadata-mode {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.ebutia-separator {
+  width: 1px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.ebutia-metadata-button {
+  margin: 0;
+  width: 48px;
+  height: 100%;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+}
+
+.ebutia-metadata-button:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+html[dark] .ebutia-metadata-button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.ebutia-metadata-button.first {
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+}
+
+.ebutia-metadata-button.last {
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+
+.ebutia-icon-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ebutia-thumbnail-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 800;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.ebutia-thumbnail-main-btn {
+  margin: 4px 0 0 4px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  pointer-events: auto;
+  transition: background 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.ebutia-thumbnail-main-btn:hover {
+  background: rgba(0, 0, 0, 0.85);
+  transform: scale(1.08);
+}
+
+.ebutia-thumbnail-main-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.ebutia-thumbnail-expandable {
+  gap: 0;
+}
+
+.ebutia-thumbnail-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 3px;
+  margin-left: 4px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.2s ease, max-height 0.25s ease;
+  pointer-events: none;
+}
+
+.ebutia-thumbnail-expandable:hover .ebutia-thumbnail-actions {
+  opacity: 1;
+  max-height: 80px;
+  pointer-events: auto;
+}
+
+.ebutia-thumbnail-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px 4px 6px;
+  border: none;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+  pointer-events: auto;
+}
+
+.ebutia-thumbnail-action-btn:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.ebutia-thumbnail-action-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ebutia-thumbnail-action-label {
+  line-height: 1;
+}
+
+.ebutia-thumbnail-button {
+  position: relative;
+  margin: 4px 0 0 4px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  color: white;
+  transition: background-color 0.2s;
+  pointer-events: auto;
+}
+
+.ebutia-thumbnail-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.ebutia-thumbnail-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.ebutia-floating-container {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+#movie_player:hover:not(.ytp-autohide) .ebutia-floating-container {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#movie_player.ytp-autohide .ebutia-floating-container {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ebutia-floating-main-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.ebutia-floating-main-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.08);
+}
+
+.ebutia-floating-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.ebutia-floating-click-only .ebutia-floating-main-btn {
+  cursor: pointer;
+}
+
+.ebutia-floating-expandable {
+  flex-direction: column;
+  gap: 0;
+}
+
+.ebutia-floating-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 4px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.25s ease, max-height 0.3s ease;
+  pointer-events: none;
+}
+
+.ebutia-floating-expandable:hover .ebutia-floating-actions {
+  opacity: 1;
+  max-height: 120px;
+  pointer-events: auto;
+}
+
+.ebutia-floating-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px 6px 8px;
+  border: none;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.ebutia-floating-action-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.ebutia-floating-action-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ebutia-floating-action-label {
+  line-height: 1;
+}
+
+.ytp-fullscreen .ebutia-floating-container {
+  top: 16px;
+}
+
+.ytp-fullscreen .ebutia-floating-main-btn {
+  width: 42px;
+  height: 42px;
+}
+
+.ytp-fullscreen .ebutia-floating-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.ytp-fullscreen .ebutia-floating-action-btn {
+  padding: 8px 14px 8px 10px;
+  font-size: 13px;
+}
+.ebutia-metadata-floating {
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.ebutia-metadata-floating-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+html[dark] .ebutia-metadata-floating-btn {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.ebutia-metadata-floating-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.08);
+}
+
+html[dark] .ebutia-metadata-floating-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.ebutia-metadata-floating-expandable {
+  position: relative;
+  flex-direction: row;
+}
+
+.ebutia-metadata-floating-actions {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  padding-right: 6px;
+  margin-right: -2px;
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  transition: opacity 0.25s ease, max-width 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.ebutia-metadata-floating-expandable:hover .ebutia-metadata-floating-actions,
+.ebutia-metadata-floating-actions:hover {
+  opacity: 1;
+  max-width: 300px;
+  pointer-events: auto;
+}
+
+.ebutia-metadata-floating-actions .ebutia-floating-action-btn {
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+html[dark] .ebutia-metadata-floating-actions .ebutia-floating-action-btn {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.ebutia-metadata-floating-actions .ebutia-floating-action-btn:hover {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+html[dark] .ebutia-metadata-floating-actions .ebutia-floating-action-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
