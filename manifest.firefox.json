@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Ebutia",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Summarize YouTube videos made easy, using your favorite AI chatbots",
   "icons": {
     "16": "public/icons/ebutia-16.png",
@@ -34,7 +34,7 @@
     "storage",
     "activeTab",
     "contextMenus",
-    "declarativeNetRequest"
+    "declarativeNetRequestWithHostAccess"
   ],
   "declarative_net_request": {
     "rule_resources": [
